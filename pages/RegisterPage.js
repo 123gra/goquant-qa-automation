@@ -14,7 +14,7 @@ export class RegisterPage {
   }
 
   async goto() {
-    await this.page.goto('https://buggy.justtestit.org');
+    await this.page.goto('/');
     await this.page.getByRole('link', { name: 'Register' }).click();
   }
 

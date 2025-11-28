@@ -1,52 +1,129 @@
-<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="13.731596">
-<testsuite name="registration.spec.js" timestamp="2025-11-28T22:27:54.069Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.905" errors="0">
-<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="6.905">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.204492">
+<testsuite name="accessibility.spec.js" timestamp="2025-11-28T23:37:31.485Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.748" errors="0">
+<testcase name="TC_A11Y_001: home page accessibility scan summary" classname="accessibility.spec.js" time="2.748">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-chromium/test-finished-1.png]]
+<![CDATA[Accessibility violations: [
+  {
+    id: [32m'color-contrast'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.color'[39m,  [32m'wcag2aa'[39m,
+      [32m'wcag143'[39m,    [32m'TTv5'[39m,
+      [32m'TT13.c'[39m,     [32m'EN-301-549'[39m,
+      [32m'EN-9.1.4.3'[39m, [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,     [32m'RGAA-3.2.1'[39m
+    ],
+    description: [32m'Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'[39m,
+    help: [32m'Elements must meet minimum color contrast ratio thresholds'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'html-has-lang'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.language'[39m, [32m'wcag2a'[39m,
+      [32m'wcag311'[39m,      [32m'TTv5'[39m,
+      [32m'TT11.a'[39m,       [32m'EN-301-549'[39m,
+      [32m'EN-9.3.1.1'[39m,   [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,       [32m'RGAA-8.3.1'[39m
+    ],
+    description: [32m'Ensure every HTML document has a lang attribute'[39m,
+    help: [32m'<html> element must have a lang attribute'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/html-has-lang?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'image-alt'[39m,
+    impact: [32m'critical'[39m,
+    tags: [
+      [32m'cat.text-alternatives'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag111'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.a'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT7.a'[39m,
+      [32m'TT7.b'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.1.1.1'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-1.1.1'[39m
+    ],
+    description: [32m'Ensure <img> elements have alternative text or a role of none or presentation'[39m,
+    help: [32m'Images must have alternative text'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright'[39m,
+    nodes: [ [36m[Object][39m, [36m[Object][39m, [36m[Object][39m, [36m[Object][39m ]
+  },
+  {
+    id: [32m'label'[39m,
+    impact: [32m'critical'[39m,
+    tags: [
+      [32m'cat.forms'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag412'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.n'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT5.c'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.4.1.2'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-11.1.1'[39m
+    ],
+    description: [32m'Ensure every form element has a label'[39m,
+    help: [32m'Form elements must have labels'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/label?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-contentinfo-is-top-level'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the contentinfo landmark is at top level'[39m,
+    help: [32m'Contentinfo landmark should not be contained in another landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-contentinfo-is-top-level?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-main-is-top-level'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the main landmark is at top level'[39m,
+    help: [32m'Main landmark should not be contained in another landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-main-is-top-level?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-no-duplicate-main'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the document has at most one main landmark'[39m,
+    help: [32m'Document should not have more than one main landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-no-duplicate-main?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-unique'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure landmarks are unique'[39m,
+    help: [32m'Landmarks should have a unique role or role/label/title (i.e. accessible name) combination'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  }
+]
+Critical violations: [33m2[39m
 
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-chromium/video.webm]]
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-chromium/test-finished-1.png]]
 
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-chromium/trace.zip]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="registration.spec.js" timestamp="2025-11-28T22:27:54.069Z" hostname="edge" tests="1" failures="0" skipped="0" time="6.668" errors="0">
-<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="6.668">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-edge/test-finished-1.png]]
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-chromium/video.webm]]
 
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-edge/video.webm]]
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-chromium/video-1.webm]]
 
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-edge/trace.zip]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="registration.spec.js" timestamp="2025-11-28T22:27:54.069Z" hostname="firefox" tests="1" failures="0" skipped="0" time="7.965" errors="0">
-<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="7.965">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-firefox/test-finished-1.png]]
-
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-firefox/video.webm]]
-
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-firefox/trace.zip]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="registration.spec.js" timestamp="2025-11-28T22:27:54.069Z" hostname="webkit" tests="1" failures="0" skipped="0" time="8.316" errors="0">
-<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="8.316">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-webkit/test-finished-1.png]]
-
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-webkit/video.webm]]
-
-[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-webkit/trace.zip]]
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-chromium/trace.zip]]
 ]]>
 </system-out>
 </testcase>

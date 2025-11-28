@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage.js';
 import { ProfilePage } from '../pages/ProfilePage.js';
-import { validUser } from '../test-data/users.js';
+import users from '../test-data/users.json';
+
+const { validUser } = users;
 
 test.describe('Profile', () => {
   test('TC_PROFILE_001: view and update user profile', async ({ page }) => {

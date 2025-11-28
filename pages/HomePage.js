@@ -4,7 +4,7 @@ export class HomePage {
   }
 
   async goto() {
-    await this.page.goto('https://buggy.justtestit.org');
+    await this.page.goto('/');
   }
 
   async openRegister() {

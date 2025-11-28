@@ -58,6 +58,9 @@ npm install
 bash
 npx playwright install
 
+Detect serious/critical violations 
+axe-core + Playwright
+
 # Running tests
 Run the full suite on Chromium:
 

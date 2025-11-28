@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/123gra/goquant-qa-automation#readme",
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
     "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1",
     "allure-playwright": "^3.4.2"

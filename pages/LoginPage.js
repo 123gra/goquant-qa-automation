@@ -7,7 +7,7 @@ export class LoginPage {
   }
 
   async gotoHome() {
-    await this.page.goto('https://buggy.justtestit.org');
+    await this.page.goto('/');
   }
 
   async login(username, password) {

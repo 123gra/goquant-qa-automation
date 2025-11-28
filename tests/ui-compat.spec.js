@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-const BASE_URL = 'https://buggy.justtestit.org';
+const BASE_PATH = '/';
 
 test('TC_UI_001: global menu links and responsive layouts', async ({ page }) => {
-  await page.goto(BASE_URL);
+  await page.goto(BASE_PATH);
   const headerLinks = ['Login', 'Register', 'Profile', 'Logout'];
 
   for (const text of headerLinks) {
@@ -16,24 +16,24 @@ test('TC_UI_001: global menu links and responsive layouts', async ({ page }) => 
   }
 
   const viewports = [
-    { width: 375, height: 812 },  
-    { width: 768, height: 1024 }, 
-    { width: 1366, height: 768 }, 
+    { width: 375, height: 812 },
+    { width: 768, height: 1024 },
+    { width: 1366, height: 768 },
   ];
 
   for (const vp of viewports) {
     await page.setViewportSize(vp);
-    await page.goto(BASE_URL);
+    await page.goto(BASE_PATH);
     await expect(page).toHaveTitle(/Buggy Cars Rating/i);
   }
 });
 
 test('TC_COMP_001: critical flows run in Chrome project', async ({ page }) => {
-  await page.goto(BASE_URL);
+  await page.goto(BASE_PATH);
   await expect(page).toHaveTitle(/Buggy Cars Rating/i);
 });
 
 test('TC_COMP_002: same flows validated in Edge project', async ({ page }) => {
-  await page.goto(BASE_URL);
+  await page.goto(BASE_PATH);
   await expect(page).toHaveTitle(/Buggy Cars Rating/i);
 });

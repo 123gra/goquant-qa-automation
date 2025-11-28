@@ -2,10 +2,11 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage.js';
 import { HomePage } from '../pages/HomePage.js';
 import { ModelsPage } from '../pages/ModelsPage.js';
-import { validUser } from '../test-data/users.js';
+import users from '../test-data/users.json';
+import modelData from '../test-data/models.json';
 
-const MAKE = 'Lamborghini';
-const MODEL = 'Miura';
+const { validUser } = users;
+const { make: MAKE, model: MODEL } = modelData;
 
 test.describe('Model browsing and voting', () => {
   test.beforeEach(async ({ page }) => {
@@ -18,7 +19,6 @@ test.describe('Model browsing and voting', () => {
 
   test('TC_MAKE_001: make category navigation', async ({ page }) => {
     const home = new HomePage(page);
-
     await home.openPopularMakeLamborghini();
 
     const modelsTable = page
@@ -31,16 +31,18 @@ test.describe('Model browsing and voting', () => {
     await expect(modelsTable.getByRole('columnheader', { name: 'Model' })).toBeVisible();
     await expect(modelsTable.getByRole('columnheader', { name: 'Comments' })).toBeVisible();
   });
+
   test('TC_MOD_001: open Miura model details', async ({ page }) => {
-  const home = new HomePage(page);
-  const models = new ModelsPage(page);
+    const home = new HomePage(page);
+    const models = new ModelsPage(page);
 
-  await home.openPopularMakeLamborghini();
-  await models.openModel(MODEL);
+    await home.openPopularMakeLamborghini();
+    await models.openModel(MODEL);
 
-  await expect(page).toHaveURL(/\/model\//);
-  await expect(page.getByText(/Miura/i)).toBeVisible();
-});
+    await expect(page).toHaveURL(/\/model\//);
+    await expect(page.getByText(/Miura/i)).toBeVisible();
+  });
+
   test('TC_MOD_002: model details view', async ({ page }) => {
     const home = new HomePage(page);
     const models = new ModelsPage(page);
@@ -61,7 +63,6 @@ test.describe('Model browsing and voting', () => {
       models.detailCommentsTable.getByRole('columnheader', { name: 'Comment' })
     ).toBeVisible();
   });
-
   
   test('TC_MOD_003: comment field visible', async ({ page }) => {
     const home = new HomePage(page);
@@ -109,7 +110,7 @@ test.describe('Model browsing and voting', () => {
     }
   });
 
-   test('TC_MOD_005: list shows updated vote count after previous vote', async ({ page }) => {
+  test('TC_MOD_005: list shows updated vote count after previous vote', async ({ page }) => {
     const home = new HomePage(page);
     const models = new ModelsPage(page);
 
