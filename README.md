@@ -58,8 +58,8 @@ npm install
 bash
 npx playwright install
 
-Detect serious/critical violations 
-axe-core + Playwright
+Accessibility: Detect serious/critical violations 
+npm install --save-dev @axe-core/playwright
 
 # Running tests
 Run the full suite on Chromium:
@@ -127,6 +127,28 @@ Comments HTML/script tags behaviour – XSS bug in comments table (intentionally
 Global navigation links
 
 Critical flows on Chromium and Edge
+
+# CI/CD
+A GitHub Actions workflow is provided at .github/workflows/playwright.yml.
+
+On each push to main or any pull request, the pipeline:
+
+Installs dependencies and Playwright browsers.
+
+Runs npx playwright test --project=chromium.
+
+Publishes the HTML report as an artifact.
+
+# API and accessibility checks
+tests/smoke.spec.js contains:
+
+UI smoke test: home page loads and title is correct.
+
+API smoke test: home endpoint returns HTTP 200 using Playwright’s request fixture.
+
+tests/accessibility.spec.js:
+
+Runs an axe-core accessibility scan on the home page and logs detected violations.
 
 # Known issues and assumptions
 Two functional login issues and one XSS vulnerability are documented in Bug_Report.docx and reproduced by the Playwright suite.
