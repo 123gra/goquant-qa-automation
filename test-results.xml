@@ -1,0 +1,54 @@
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="13.731596">
+<testsuite name="registration.spec.js" timestamp="2025-11-28T22:27:54.069Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.905" errors="0">
+<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="6.905">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-11-28T22:27:54.069Z" hostname="edge" tests="1" failures="0" skipped="0" time="6.668" errors="0">
+<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="6.668">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-edge/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-11-28T22:27:54.069Z" hostname="firefox" tests="1" failures="0" skipped="0" time="7.965" errors="0">
+<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="7.965">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-11-28T22:27:54.069Z" hostname="webkit" tests="1" failures="0" skipped="0" time="8.316" errors="0">
+<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="8.316">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
