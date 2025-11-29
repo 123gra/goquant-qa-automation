@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.204492">
-<testsuite name="accessibility.spec.js" timestamp="2025-11-28T23:37:31.485Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.748" errors="0">
-<testcase name="TC_A11Y_001: home page accessibility scan summary" classname="accessibility.spec.js" time="2.748">
+<testsuites id="" name="" tests="80" failures="32" skipped="0" errors="0" time="361.36432199999996">
+<testsuite name="accessibility.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.317" errors="0">
+<testcase name="TC_A11Y_001: home page accessibility scan summary" classname="accessibility.spec.js" time="8.317">
 <system-out>
 <![CDATA[Accessibility violations: [
   {
@@ -113,17 +113,2756 @@
     help: [32m'Landmarks should have a unique role or role/label/title (i.e. accessible name) combination'[39m,
     helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=playwright'[39m,
     nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'link-name'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.name-role-value'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag244'[39m,
+      [32m'wcag412'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.a'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT6.a'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.2.4.4'[39m,
+      [32m'EN-9.4.1.2'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-6.2.1'[39m
+    ],
+    description: [32m'Ensure links have discernible text'[39m,
+    help: [32m'Links must have discernible text'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
   }
 ]
 Critical violations: [33m2[39m
 
 [[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-chromium/test-finished-1.png]]
 
-[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-chromium/video.webm]]
-
 [[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-chromium/video-1.webm]]
 
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-chromium/video.webm]]
+
 [[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="login.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="chromium" tests="4" failures="2" skipped="0" time="42.607" errors="0">
+<testcase name="Login › TC_LOGIN_001: valid login should redirect to home/dashboard" classname="login.spec.js" time="13.789">
+<failure message="login.spec.js:8:7 TC_LOGIN_001: valid login should redirect to home/dashboard" type="FAILURE">
+<![CDATA[  [chromium] › login.spec.js:8:7 › Login › TC_LOGIN_001: valid login should redirect to home/dashboard 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/(overall|profile|home|model|make)/
+    Received string:  "https://buggy.justtestit.org/"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        9 × unexpected value "https://buggy.justtestit.org/"
+
+
+      10 |     await login.gotoHome();
+      11 |     await login.login(validUser.username, validUser.password);
+    > 12 |     await expect(page).toHaveURL(/\/(overall|profile|home|model|make)/);
+         |                        ^
+      13 |   });
+      14 |
+      15 |   test('TC_LOGIN_002: invalid login shows error', async ({ page }) => {
+        at /workspaces/goquant-qa-automation/tests/login.spec.js:12:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-chromium/error-context.md]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_002: invalid login shows error" classname="login.spec.js" time="7.309">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_003: first name, profile and logout visible after login" classname="login.spec.js" time="9.113">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_004: registration success message should NOT be shown after login" classname="login.spec.js" time="12.396">
+<failure message="login.spec.js:32:7 TC_LOGIN_004: registration success message should NOT be shown after login" type="FAILURE">
+<![CDATA[  [chromium] › login.spec.js:32:7 › Login › TC_LOGIN_004: registration success message should NOT be shown after login 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Registration is successful', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('Registration is successful', { exact: true })
+
+
+      37 |     await expect(page.getByText(/Hi,\s*Grace/i)).toBeVisible();
+      38 |
+    > 39 |     await expect(login.registrationSuccessMessage()).toBeVisible();
+         |                                                      ^
+      40 |   });
+      41 | });
+      42 |
+        at /workspaces/goquant-qa-automation/tests/login.spec.js:39:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-chromium/error-context.md]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="models.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="chromium" tests="7" failures="6" skipped="0" time="214.712" errors="0">
+<testcase name="Model browsing and voting › TC_MAKE_001: make category navigation" classname="models.spec.js" time="8.972">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_001: open Miura model details" classname="models.spec.js" time="31.953">
+<failure message="models.spec.js:35:7 TC_MOD_001: open Miura model details" type="FAILURE">
+<![CDATA[  [chromium] › models.spec.js:35:7 › Model browsing and voting › TC_MOD_001: open Miura model details 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:40:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-chromium/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_002: model details view" classname="models.spec.js" time="33.073">
+<failure message="models.spec.js:46:7 TC_MOD_002: model details view" type="FAILURE">
+<![CDATA[  [chromium] › models.spec.js:46:7 › Model browsing and voting › TC_MOD_002: model details view ────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:51:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-chromium/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_003: comment field visible" classname="models.spec.js" time="33.024">
+<failure message="models.spec.js:67:7 TC_MOD_003: comment field visible" type="FAILURE">
+<![CDATA[  [chromium] › models.spec.js:67:7 › Model browsing and voting › TC_MOD_003: comment field visible ─
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:72:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-chromium/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_004: vote updates counts and shows thank you" classname="models.spec.js" time="35.096">
+<failure message="models.spec.js:77:7 TC_MOD_004: vote updates counts and shows thank you" type="FAILURE">
+<![CDATA[  [chromium] › models.spec.js:77:7 › Model browsing and voting › TC_MOD_004: vote updates counts and shows thank you 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.innerText: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('row').filter({ has: getByRole('link', { name: 'Miura', exact: true }) }).first().getByRole('cell').nth(2)
+
+
+       at ../pages/ModelsPage.js:49
+
+      47 |     const cells = row.getByRole('cell');
+      48 |     const votesCell = cells.nth(2);
+    > 49 |     const text = await votesCell.innerText();
+         |                                  ^
+      50 |     return { votesCell, votes: parseInt(text.replace(/\D/g, ''), 10) || 0 };
+      51 |   }
+      52 |
+        at ModelsPage.getVotesOnMakeList (/workspaces/goquant-qa-automation/pages/ModelsPage.js:49:34)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:83:48
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-chromium/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_005: list shows updated vote count after previous vote" classname="models.spec.js" time="35.061">
+<failure message="models.spec.js:113:7 TC_MOD_005: list shows updated vote count after previous vote" type="FAILURE">
+<![CDATA[  [chromium] › models.spec.js:113:7 › Model browsing and voting › TC_MOD_005: list shows updated vote count after previous vote 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.innerText: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('row').filter({ has: getByRole('link', { name: 'Miura', exact: true }) }).first().getByRole('cell').nth(2)
+
+
+       at ../pages/ModelsPage.js:49
+
+      47 |     const cells = row.getByRole('cell');
+      48 |     const votesCell = cells.nth(2);
+    > 49 |     const text = await votesCell.innerText();
+         |                                  ^
+      50 |     return { votesCell, votes: parseInt(text.replace(/\D/g, ''), 10) || 0 };
+      51 |   }
+      52 |
+        at ModelsPage.getVotesOnMakeList (/workspaces/goquant-qa-automation/pages/ModelsPage.js:49:34)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:119:36
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-chromium/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_006: no HTML/script tags in comments table (BUG)" classname="models.spec.js" time="37.533">
+<failure message="models.spec.js:123:7 TC_MOD_006: no HTML/script tags in comments table (BUG)" type="FAILURE">
+<![CDATA[  [chromium] › models.spec.js:123:7 › Model browsing and voting › TC_MOD_006: no HTML/script tags in comments table (BUG) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:128:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--chromium/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--chromium/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="profile.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.865" errors="0">
+<testcase name="Profile › TC_PROFILE_001: view and update user profile" classname="profile.spec.js" time="6.865">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="chromium" tests="2" failures="0" skipped="0" time="6.762" errors="0">
+<testcase name="Registration › TC_REG_001: valid user registration" classname="registration.spec.js" time="3.442">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="3.32">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="chromium" tests="2" failures="0" skipped="0" time="3.346" errors="0">
+<testcase name="Smoke Test - Site loads" classname="smoke.spec.js" time="2.704">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Smoke Test - Home returns 200 (API)" classname="smoke.spec.js" time="0.642">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Home-returns-200-API--chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui-compat.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="chromium" tests="3" failures="0" skipped="0" time="9.76" errors="0">
+<testcase name="TC_UI_001: global menu links and responsive layouts" classname="ui-compat.spec.js" time="4.993">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="TC_COMP_001: critical flows run in Chrome project" classname="ui-compat.spec.js" time="2.703">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="TC_COMP_002: same flows validated in Edge project" classname="ui-compat.spec.js" time="2.064">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="accessibility.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="edge" tests="1" failures="0" skipped="0" time="6.989" errors="0">
+<testcase name="TC_A11Y_001: home page accessibility scan summary" classname="accessibility.spec.js" time="6.989">
+<system-out>
+<![CDATA[Accessibility violations: [
+  {
+    id: [32m'color-contrast'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.color'[39m,  [32m'wcag2aa'[39m,
+      [32m'wcag143'[39m,    [32m'TTv5'[39m,
+      [32m'TT13.c'[39m,     [32m'EN-301-549'[39m,
+      [32m'EN-9.1.4.3'[39m, [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,     [32m'RGAA-3.2.1'[39m
+    ],
+    description: [32m'Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'[39m,
+    help: [32m'Elements must meet minimum color contrast ratio thresholds'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'html-has-lang'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.language'[39m, [32m'wcag2a'[39m,
+      [32m'wcag311'[39m,      [32m'TTv5'[39m,
+      [32m'TT11.a'[39m,       [32m'EN-301-549'[39m,
+      [32m'EN-9.3.1.1'[39m,   [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,       [32m'RGAA-8.3.1'[39m
+    ],
+    description: [32m'Ensure every HTML document has a lang attribute'[39m,
+    help: [32m'<html> element must have a lang attribute'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/html-has-lang?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'image-alt'[39m,
+    impact: [32m'critical'[39m,
+    tags: [
+      [32m'cat.text-alternatives'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag111'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.a'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT7.a'[39m,
+      [32m'TT7.b'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.1.1.1'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-1.1.1'[39m
+    ],
+    description: [32m'Ensure <img> elements have alternative text or a role of none or presentation'[39m,
+    help: [32m'Images must have alternative text'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright'[39m,
+    nodes: [ [36m[Object][39m, [36m[Object][39m, [36m[Object][39m, [36m[Object][39m ]
+  },
+  {
+    id: [32m'label'[39m,
+    impact: [32m'critical'[39m,
+    tags: [
+      [32m'cat.forms'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag412'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.n'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT5.c'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.4.1.2'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-11.1.1'[39m
+    ],
+    description: [32m'Ensure every form element has a label'[39m,
+    help: [32m'Form elements must have labels'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/label?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-contentinfo-is-top-level'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the contentinfo landmark is at top level'[39m,
+    help: [32m'Contentinfo landmark should not be contained in another landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-contentinfo-is-top-level?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-main-is-top-level'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the main landmark is at top level'[39m,
+    help: [32m'Main landmark should not be contained in another landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-main-is-top-level?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-no-duplicate-main'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the document has at most one main landmark'[39m,
+    help: [32m'Document should not have more than one main landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-no-duplicate-main?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-unique'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure landmarks are unique'[39m,
+    help: [32m'Landmarks should have a unique role or role/label/title (i.e. accessible name) combination'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'link-name'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.name-role-value'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag244'[39m,
+      [32m'wcag412'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.a'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT6.a'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.2.4.4'[39m,
+      [32m'EN-9.4.1.2'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-6.2.1'[39m
+    ],
+    description: [32m'Ensure links have discernible text'[39m,
+    help: [32m'Links must have discernible text'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  }
+]
+Critical violations: [33m2[39m
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-edge/video.webm]]
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-edge/video-1.webm]]
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="login.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="edge" tests="4" failures="2" skipped="0" time="36.617" errors="0">
+<testcase name="Login › TC_LOGIN_001: valid login should redirect to home/dashboard" classname="login.spec.js" time="10.849">
+<failure message="login.spec.js:8:7 TC_LOGIN_001: valid login should redirect to home/dashboard" type="FAILURE">
+<![CDATA[  [edge] › login.spec.js:8:7 › Login › TC_LOGIN_001: valid login should redirect to home/dashboard ─
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/(overall|profile|home|model|make)/
+    Received string:  "https://buggy.justtestit.org/"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        9 × unexpected value "https://buggy.justtestit.org/"
+
+
+      10 |     await login.gotoHome();
+      11 |     await login.login(validUser.username, validUser.password);
+    > 12 |     await expect(page).toHaveURL(/\/(overall|profile|home|model|make)/);
+         |                        ^
+      13 |   });
+      14 |
+      15 |   test('TC_LOGIN_002: invalid login shows error', async ({ page }) => {
+        at /workspaces/goquant-qa-automation/tests/login.spec.js:12:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-edge/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-edge/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-edge/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-edge/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-edge/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-edge/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-edge/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-edge/error-context.md]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_002: invalid login shows error" classname="login.spec.js" time="6.14">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-edge/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_003: first name, profile and logout visible after login" classname="login.spec.js" time="7.447">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-edge/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_004: registration success message should NOT be shown after login" classname="login.spec.js" time="12.181">
+<failure message="login.spec.js:32:7 TC_LOGIN_004: registration success message should NOT be shown after login" type="FAILURE">
+<![CDATA[  [edge] › login.spec.js:32:7 › Login › TC_LOGIN_004: registration success message should NOT be shown after login 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Registration is successful', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('Registration is successful', { exact: true })
+
+
+      37 |     await expect(page.getByText(/Hi,\s*Grace/i)).toBeVisible();
+      38 |
+    > 39 |     await expect(login.registrationSuccessMessage()).toBeVisible();
+         |                                                      ^
+      40 |   });
+      41 | });
+      42 |
+        at /workspaces/goquant-qa-automation/tests/login.spec.js:39:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-edge/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-edge/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-edge/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-edge/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-edge/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-edge/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-edge/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-edge/error-context.md]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="models.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="edge" tests="7" failures="6" skipped="0" time="223.694" errors="0">
+<testcase name="Model browsing and voting › TC_MAKE_001: make category navigation" classname="models.spec.js" time="8.875">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-edge/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_001: open Miura model details" classname="models.spec.js" time="33.086">
+<failure message="models.spec.js:35:7 TC_MOD_001: open Miura model details" type="FAILURE">
+<![CDATA[  [edge] › models.spec.js:35:7 › Model browsing and voting › TC_MOD_001: open Miura model details ──
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:40:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-edge/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-edge/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-edge/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-edge/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-edge/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-edge/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-edge/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-edge/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_002: model details view" classname="models.spec.js" time="31.934">
+<failure message="models.spec.js:46:7 TC_MOD_002: model details view" type="FAILURE">
+<![CDATA[  [edge] › models.spec.js:46:7 › Model browsing and voting › TC_MOD_002: model details view ────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:51:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-edge/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-edge/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-edge/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-edge/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-edge/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-edge/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-edge/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-edge/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_003: comment field visible" classname="models.spec.js" time="35.659">
+<failure message="models.spec.js:67:7 TC_MOD_003: comment field visible" type="FAILURE">
+<![CDATA[  [edge] › models.spec.js:67:7 › Model browsing and voting › TC_MOD_003: comment field visible ─────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:72:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-edge/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-edge/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-edge/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-edge/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-edge/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-edge/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-edge/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-edge/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_004: vote updates counts and shows thank you" classname="models.spec.js" time="34.336">
+<failure message="models.spec.js:77:7 TC_MOD_004: vote updates counts and shows thank you" type="FAILURE">
+<![CDATA[  [edge] › models.spec.js:77:7 › Model browsing and voting › TC_MOD_004: vote updates counts and shows thank you 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.innerText: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('row').filter({ has: getByRole('link', { name: 'Miura', exact: true }) }).first().getByRole('cell').nth(2)
+
+
+       at ../pages/ModelsPage.js:49
+
+      47 |     const cells = row.getByRole('cell');
+      48 |     const votesCell = cells.nth(2);
+    > 49 |     const text = await votesCell.innerText();
+         |                                  ^
+      50 |     return { votesCell, votes: parseInt(text.replace(/\D/g, ''), 10) || 0 };
+      51 |   }
+      52 |
+        at ModelsPage.getVotesOnMakeList (/workspaces/goquant-qa-automation/pages/ModelsPage.js:49:34)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:83:48
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-edge/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-edge/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-edge/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-edge/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-edge/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-edge/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-edge/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-edge/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_005: list shows updated vote count after previous vote" classname="models.spec.js" time="40.527">
+<failure message="models.spec.js:113:7 TC_MOD_005: list shows updated vote count after previous vote" type="FAILURE">
+<![CDATA[  [edge] › models.spec.js:113:7 › Model browsing and voting › TC_MOD_005: list shows updated vote count after previous vote 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.innerText: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('row').filter({ has: getByRole('link', { name: 'Miura', exact: true }) }).first().getByRole('cell').nth(2)
+
+
+       at ../pages/ModelsPage.js:49
+
+      47 |     const cells = row.getByRole('cell');
+      48 |     const votesCell = cells.nth(2);
+    > 49 |     const text = await votesCell.innerText();
+         |                                  ^
+      50 |     return { votesCell, votes: parseInt(text.replace(/\D/g, ''), 10) || 0 };
+      51 |   }
+      52 |
+        at ModelsPage.getVotesOnMakeList (/workspaces/goquant-qa-automation/pages/ModelsPage.js:49:34)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:119:36
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-edge/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-edge/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-edge/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-edge/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-edge/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-edge/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-edge/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-edge/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_006: no HTML/script tags in comments table (BUG)" classname="models.spec.js" time="39.277">
+<failure message="models.spec.js:123:7 TC_MOD_006: no HTML/script tags in comments table (BUG)" type="FAILURE">
+<![CDATA[  [edge] › models.spec.js:123:7 › Model browsing and voting › TC_MOD_006: no HTML/script tags in comments table (BUG) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:128:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--edge/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--edge/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--edge/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--edge/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--edge/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--edge/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--edge/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--edge/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="profile.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="edge" tests="1" failures="0" skipped="0" time="5.924" errors="0">
+<testcase name="Profile › TC_PROFILE_001: view and update user profile" classname="profile.spec.js" time="5.924">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-edge/video.webm]]
+
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="edge" tests="2" failures="0" skipped="0" time="6.682" errors="0">
+<testcase name="Registration › TC_REG_001: valid user registration" classname="registration.spec.js" time="4.538">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-edge/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="2.144">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-edge/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="edge" tests="2" failures="0" skipped="0" time="1.712" errors="0">
+<testcase name="Smoke Test - Site loads" classname="smoke.spec.js" time="1.433">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-edge/video.webm]]
+
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Smoke Test - Home returns 200 (API)" classname="smoke.spec.js" time="0.279">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Home-returns-200-API--edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui-compat.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="edge" tests="3" failures="0" skipped="0" time="9.181" errors="0">
+<testcase name="TC_UI_001: global menu links and responsive layouts" classname="ui-compat.spec.js" time="5.138">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-edge/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="TC_COMP_001: critical flows run in Chrome project" classname="ui-compat.spec.js" time="2.209">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-edge/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="TC_COMP_002: same flows validated in Edge project" classname="ui-compat.spec.js" time="1.834">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-edge/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-edge/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-edge/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="accessibility.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="firefox" tests="1" failures="0" skipped="0" time="13.926" errors="0">
+<testcase name="TC_A11Y_001: home page accessibility scan summary" classname="accessibility.spec.js" time="13.926">
+<system-out>
+<![CDATA[Accessibility violations: [
+  {
+    id: [32m'color-contrast'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.color'[39m,  [32m'wcag2aa'[39m,
+      [32m'wcag143'[39m,    [32m'TTv5'[39m,
+      [32m'TT13.c'[39m,     [32m'EN-301-549'[39m,
+      [32m'EN-9.1.4.3'[39m, [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,     [32m'RGAA-3.2.1'[39m
+    ],
+    description: [32m'Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'[39m,
+    help: [32m'Elements must meet minimum color contrast ratio thresholds'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'html-has-lang'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.language'[39m, [32m'wcag2a'[39m,
+      [32m'wcag311'[39m,      [32m'TTv5'[39m,
+      [32m'TT11.a'[39m,       [32m'EN-301-549'[39m,
+      [32m'EN-9.3.1.1'[39m,   [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,       [32m'RGAA-8.3.1'[39m
+    ],
+    description: [32m'Ensure every HTML document has a lang attribute'[39m,
+    help: [32m'<html> element must have a lang attribute'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/html-has-lang?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'image-alt'[39m,
+    impact: [32m'critical'[39m,
+    tags: [
+      [32m'cat.text-alternatives'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag111'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.a'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT7.a'[39m,
+      [32m'TT7.b'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.1.1.1'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-1.1.1'[39m
+    ],
+    description: [32m'Ensure <img> elements have alternative text or a role of none or presentation'[39m,
+    help: [32m'Images must have alternative text'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright'[39m,
+    nodes: [ [36m[Object][39m, [36m[Object][39m, [36m[Object][39m, [36m[Object][39m ]
+  },
+  {
+    id: [32m'label'[39m,
+    impact: [32m'critical'[39m,
+    tags: [
+      [32m'cat.forms'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag412'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.n'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT5.c'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.4.1.2'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-11.1.1'[39m
+    ],
+    description: [32m'Ensure every form element has a label'[39m,
+    help: [32m'Form elements must have labels'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/label?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-contentinfo-is-top-level'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the contentinfo landmark is at top level'[39m,
+    help: [32m'Contentinfo landmark should not be contained in another landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-contentinfo-is-top-level?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-main-is-top-level'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the main landmark is at top level'[39m,
+    help: [32m'Main landmark should not be contained in another landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-main-is-top-level?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-no-duplicate-main'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the document has at most one main landmark'[39m,
+    help: [32m'Document should not have more than one main landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-no-duplicate-main?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-unique'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure landmarks are unique'[39m,
+    help: [32m'Landmarks should have a unique role or role/label/title (i.e. accessible name) combination'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'link-name'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.name-role-value'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag244'[39m,
+      [32m'wcag412'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.a'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT6.a'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.2.4.4'[39m,
+      [32m'EN-9.4.1.2'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-6.2.1'[39m
+    ],
+    description: [32m'Ensure links have discernible text'[39m,
+    help: [32m'Links must have discernible text'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  }
+]
+Critical violations: [33m2[39m
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-firefox/video-1.webm]]
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="login.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="firefox" tests="4" failures="2" skipped="0" time="56.358" errors="0">
+<testcase name="Login › TC_LOGIN_001: valid login should redirect to home/dashboard" classname="login.spec.js" time="14.268">
+<failure message="login.spec.js:8:7 TC_LOGIN_001: valid login should redirect to home/dashboard" type="FAILURE">
+<![CDATA[  [firefox] › login.spec.js:8:7 › Login › TC_LOGIN_001: valid login should redirect to home/dashboard 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/(overall|profile|home|model|make)/
+    Received string:  "https://buggy.justtestit.org/"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        8 × unexpected value "https://buggy.justtestit.org/"
+
+
+      10 |     await login.gotoHome();
+      11 |     await login.login(validUser.username, validUser.password);
+    > 12 |     await expect(page).toHaveURL(/\/(overall|profile|home|model|make)/);
+         |                        ^
+      13 |   });
+      14 |
+      15 |   test('TC_LOGIN_002: invalid login shows error', async ({ page }) => {
+        at /workspaces/goquant-qa-automation/tests/login.spec.js:12:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-firefox/error-context.md]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_002: invalid login shows error" classname="login.spec.js" time="12.47">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_003: first name, profile and logout visible after login" classname="login.spec.js" time="7.149">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_004: registration success message should NOT be shown after login" classname="login.spec.js" time="22.471">
+<failure message="login.spec.js:32:7 TC_LOGIN_004: registration success message should NOT be shown after login" type="FAILURE">
+<![CDATA[  [firefox] › login.spec.js:32:7 › Login › TC_LOGIN_004: registration success message should NOT be shown after login 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Registration is successful', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('Registration is successful', { exact: true })
+
+
+      37 |     await expect(page.getByText(/Hi,\s*Grace/i)).toBeVisible();
+      38 |
+    > 39 |     await expect(login.registrationSuccessMessage()).toBeVisible();
+         |                                                      ^
+      40 |   });
+      41 | });
+      42 |
+        at /workspaces/goquant-qa-automation/tests/login.spec.js:39:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-firefox/error-context.md]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="models.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="firefox" tests="7" failures="6" skipped="0" time="216.167" errors="0">
+<testcase name="Model browsing and voting › TC_MAKE_001: make category navigation" classname="models.spec.js" time="19.89">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_001: open Miura model details" classname="models.spec.js" time="30.92">
+<failure message="models.spec.js:35:7 TC_MOD_001: open Miura model details" type="FAILURE">
+<![CDATA[  [firefox] › models.spec.js:35:7 › Model browsing and voting › TC_MOD_001: open Miura model details 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:40:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-firefox/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_002: model details view" classname="models.spec.js" time="32.981">
+<failure message="models.spec.js:46:7 TC_MOD_002: model details view" type="FAILURE">
+<![CDATA[  [firefox] › models.spec.js:46:7 › Model browsing and voting › TC_MOD_002: model details view ─────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:51:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-firefox/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_003: comment field visible" classname="models.spec.js" time="31.87">
+<failure message="models.spec.js:67:7 TC_MOD_003: comment field visible" type="FAILURE">
+<![CDATA[  [firefox] › models.spec.js:67:7 › Model browsing and voting › TC_MOD_003: comment field visible ──
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:72:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-firefox/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_004: vote updates counts and shows thank you" classname="models.spec.js" time="32.151">
+<failure message="models.spec.js:77:7 TC_MOD_004: vote updates counts and shows thank you" type="FAILURE">
+<![CDATA[  [firefox] › models.spec.js:77:7 › Model browsing and voting › TC_MOD_004: vote updates counts and shows thank you 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.innerText: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('row').filter({ has: getByRole('link', { name: 'Miura', exact: true }) }).first().getByRole('cell').nth(2)
+
+
+       at ../pages/ModelsPage.js:49
+
+      47 |     const cells = row.getByRole('cell');
+      48 |     const votesCell = cells.nth(2);
+    > 49 |     const text = await votesCell.innerText();
+         |                                  ^
+      50 |     return { votesCell, votes: parseInt(text.replace(/\D/g, ''), 10) || 0 };
+      51 |   }
+      52 |
+        at ModelsPage.getVotesOnMakeList (/workspaces/goquant-qa-automation/pages/ModelsPage.js:49:34)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:83:48
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-firefox/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_005: list shows updated vote count after previous vote" classname="models.spec.js" time="34.23">
+<failure message="models.spec.js:113:7 TC_MOD_005: list shows updated vote count after previous vote" type="FAILURE">
+<![CDATA[  [firefox] › models.spec.js:113:7 › Model browsing and voting › TC_MOD_005: list shows updated vote count after previous vote 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.innerText: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('row').filter({ has: getByRole('link', { name: 'Miura', exact: true }) }).first().getByRole('cell').nth(2)
+
+
+       at ../pages/ModelsPage.js:49
+
+      47 |     const cells = row.getByRole('cell');
+      48 |     const votesCell = cells.nth(2);
+    > 49 |     const text = await votesCell.innerText();
+         |                                  ^
+      50 |     return { votesCell, votes: parseInt(text.replace(/\D/g, ''), 10) || 0 };
+      51 |   }
+      52 |
+        at ModelsPage.getVotesOnMakeList (/workspaces/goquant-qa-automation/pages/ModelsPage.js:49:34)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:119:36
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-firefox/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_006: no HTML/script tags in comments table (BUG)" classname="models.spec.js" time="34.125">
+<failure message="models.spec.js:123:7 TC_MOD_006: no HTML/script tags in comments table (BUG)" type="FAILURE">
+<![CDATA[  [firefox] › models.spec.js:123:7 › Model browsing and voting › TC_MOD_006: no HTML/script tags in comments table (BUG) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:128:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--firefox/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--firefox/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="profile.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="firefox" tests="1" failures="0" skipped="0" time="11.938" errors="0">
+<testcase name="Profile › TC_PROFILE_001: view and update user profile" classname="profile.spec.js" time="11.938">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="firefox" tests="2" failures="0" skipped="0" time="17.427" errors="0">
+<testcase name="Registration › TC_REG_001: valid user registration" classname="registration.spec.js" time="10.836">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="6.591">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="firefox" tests="2" failures="0" skipped="0" time="5.952" errors="0">
+<testcase name="Smoke Test - Site loads" classname="smoke.spec.js" time="4.973">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Smoke Test - Home returns 200 (API)" classname="smoke.spec.js" time="0.979">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Home-returns-200-API--firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui-compat.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="firefox" tests="3" failures="0" skipped="0" time="25.715" errors="0">
+<testcase name="TC_UI_001: global menu links and responsive layouts" classname="ui-compat.spec.js" time="12.806">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="TC_COMP_001: critical flows run in Chrome project" classname="ui-compat.spec.js" time="4.069">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="TC_COMP_002: same flows validated in Edge project" classname="ui-compat.spec.js" time="8.84">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-firefox/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="accessibility.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="webkit" tests="1" failures="0" skipped="0" time="10.182" errors="0">
+<testcase name="TC_A11Y_001: home page accessibility scan summary" classname="accessibility.spec.js" time="10.182">
+<system-out>
+<![CDATA[Accessibility violations: [
+  {
+    id: [32m'color-contrast'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.color'[39m,  [32m'wcag2aa'[39m,
+      [32m'wcag143'[39m,    [32m'TTv5'[39m,
+      [32m'TT13.c'[39m,     [32m'EN-301-549'[39m,
+      [32m'EN-9.1.4.3'[39m, [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,     [32m'RGAA-3.2.1'[39m
+    ],
+    description: [32m'Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds'[39m,
+    help: [32m'Elements must meet minimum color contrast ratio thresholds'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'html-has-lang'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.language'[39m, [32m'wcag2a'[39m,
+      [32m'wcag311'[39m,      [32m'TTv5'[39m,
+      [32m'TT11.a'[39m,       [32m'EN-301-549'[39m,
+      [32m'EN-9.3.1.1'[39m,   [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,       [32m'RGAA-8.3.1'[39m
+    ],
+    description: [32m'Ensure every HTML document has a lang attribute'[39m,
+    help: [32m'<html> element must have a lang attribute'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/html-has-lang?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'image-alt'[39m,
+    impact: [32m'critical'[39m,
+    tags: [
+      [32m'cat.text-alternatives'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag111'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.a'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT7.a'[39m,
+      [32m'TT7.b'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.1.1.1'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-1.1.1'[39m
+    ],
+    description: [32m'Ensure <img> elements have alternative text or a role of none or presentation'[39m,
+    help: [32m'Images must have alternative text'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/image-alt?application=playwright'[39m,
+    nodes: [ [36m[Object][39m, [36m[Object][39m, [36m[Object][39m, [36m[Object][39m ]
+  },
+  {
+    id: [32m'label'[39m,
+    impact: [32m'critical'[39m,
+    tags: [
+      [32m'cat.forms'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag412'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.n'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT5.c'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.4.1.2'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-11.1.1'[39m
+    ],
+    description: [32m'Ensure every form element has a label'[39m,
+    help: [32m'Form elements must have labels'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/label?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-contentinfo-is-top-level'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the contentinfo landmark is at top level'[39m,
+    help: [32m'Contentinfo landmark should not be contained in another landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-contentinfo-is-top-level?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-main-is-top-level'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the main landmark is at top level'[39m,
+    help: [32m'Main landmark should not be contained in another landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-main-is-top-level?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-no-duplicate-main'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure the document has at most one main landmark'[39m,
+    help: [32m'Document should not have more than one main landmark'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-no-duplicate-main?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'landmark-unique'[39m,
+    impact: [32m'moderate'[39m,
+    tags: [ [32m'cat.semantics'[39m, [32m'best-practice'[39m ],
+    description: [32m'Ensure landmarks are unique'[39m,
+    help: [32m'Landmarks should have a unique role or role/label/title (i.e. accessible name) combination'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  },
+  {
+    id: [32m'link-name'[39m,
+    impact: [32m'serious'[39m,
+    tags: [
+      [32m'cat.name-role-value'[39m,
+      [32m'wcag2a'[39m,
+      [32m'wcag244'[39m,
+      [32m'wcag412'[39m,
+      [32m'section508'[39m,
+      [32m'section508.22.a'[39m,
+      [32m'TTv5'[39m,
+      [32m'TT6.a'[39m,
+      [32m'EN-301-549'[39m,
+      [32m'EN-9.2.4.4'[39m,
+      [32m'EN-9.4.1.2'[39m,
+      [32m'ACT'[39m,
+      [32m'RGAAv4'[39m,
+      [32m'RGAA-6.2.1'[39m
+    ],
+    description: [32m'Ensure links have discernible text'[39m,
+    help: [32m'Links must have discernible text'[39m,
+    helpUrl: [32m'https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright'[39m,
+    nodes: [ [36m[Object][39m ]
+  }
+]
+Critical violations: [33m2[39m
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-webkit/video-1.webm]]
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/accessibility-TC-A11Y-001--6ffa4--accessibility-scan-summary-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="login.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="webkit" tests="4" failures="2" skipped="0" time="44.536" errors="0">
+<testcase name="Login › TC_LOGIN_001: valid login should redirect to home/dashboard" classname="login.spec.js" time="13.262">
+<failure message="login.spec.js:8:7 TC_LOGIN_001: valid login should redirect to home/dashboard" type="FAILURE">
+<![CDATA[  [webkit] › login.spec.js:8:7 › Login › TC_LOGIN_001: valid login should redirect to home/dashboard 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/(overall|profile|home|model|make)/
+    Received string:  "https://buggy.justtestit.org/"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        9 × unexpected value "https://buggy.justtestit.org/"
+
+
+      10 |     await login.gotoHome();
+      11 |     await login.login(validUser.username, validUser.password);
+    > 12 |     await expect(page).toHaveURL(/\/(overall|profile|home|model|make)/);
+         |                        ^
+      13 |   });
+      14 |
+      15 |   test('TC_LOGIN_002: invalid login shows error', async ({ page }) => {
+        at /workspaces/goquant-qa-automation/tests/login.spec.js:12:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-webkit/error-context.md]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-001-v-d3fb8--redirect-to-home-dashboard-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_002: invalid login shows error" classname="login.spec.js" time="6.739">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-002-invalid-login-shows-error-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_003: first name, profile and logout visible after login" classname="login.spec.js" time="9.206">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-003-f-6ca07--logout-visible-after-login-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › TC_LOGIN_004: registration success message should NOT be shown after login" classname="login.spec.js" time="15.329">
+<failure message="login.spec.js:32:7 TC_LOGIN_004: registration success message should NOT be shown after login" type="FAILURE">
+<![CDATA[  [webkit] › login.spec.js:32:7 › Login › TC_LOGIN_004: registration success message should NOT be shown after login 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Registration is successful', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('Registration is successful', { exact: true })
+
+
+      37 |     await expect(page.getByText(/Hi,\s*Grace/i)).toBeVisible();
+      38 |
+    > 39 |     await expect(login.registrationSuccessMessage()).toBeVisible();
+         |                                                      ^
+      40 |   });
+      41 | });
+      42 |
+        at /workspaces/goquant-qa-automation/tests/login.spec.js:39:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-webkit/error-context.md]]
+
+[[ATTACHMENT|test-results/login-Login-TC-LOGIN-004-r-a1399-ld-NOT-be-shown-after-login-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="models.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="webkit" tests="7" failures="6" skipped="0" time="209.407" errors="0">
+<testcase name="Model browsing and voting › TC_MAKE_001: make category navigation" classname="models.spec.js" time="11.342">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--2fc9c-01-make-category-navigation-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_001: open Miura model details" classname="models.spec.js" time="32.518">
+<failure message="models.spec.js:35:7 TC_MOD_001: open Miura model details" type="FAILURE">
+<![CDATA[  [webkit] › models.spec.js:35:7 › Model browsing and voting › TC_MOD_001: open Miura model details 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:40:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-webkit/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ba496-01-open-Miura-model-details-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_002: model details view" classname="models.spec.js" time="32.43">
+<failure message="models.spec.js:46:7 TC_MOD_002: model details view" type="FAILURE">
+<![CDATA[  [webkit] › models.spec.js:46:7 › Model browsing and voting › TC_MOD_002: model details view ──────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:51:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-webkit/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a16fc--MOD-002-model-details-view-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_003: comment field visible" classname="models.spec.js" time="35.448">
+<failure message="models.spec.js:67:7 TC_MOD_003: comment field visible" type="FAILURE">
+<![CDATA[  [webkit] › models.spec.js:67:7 › Model browsing and voting › TC_MOD_003: comment field visible ───
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:72:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-webkit/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--4570b-D-003-comment-field-visible-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_004: vote updates counts and shows thank you" classname="models.spec.js" time="33.089">
+<failure message="models.spec.js:77:7 TC_MOD_004: vote updates counts and shows thank you" type="FAILURE">
+<![CDATA[  [webkit] › models.spec.js:77:7 › Model browsing and voting › TC_MOD_004: vote updates counts and shows thank you 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.innerText: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('row').filter({ has: getByRole('link', { name: 'Miura', exact: true }) }).first().getByRole('cell').nth(2)
+
+
+       at ../pages/ModelsPage.js:49
+
+      47 |     const cells = row.getByRole('cell');
+      48 |     const votesCell = cells.nth(2);
+    > 49 |     const text = await votesCell.innerText();
+         |                                  ^
+      50 |     return { votesCell, votes: parseInt(text.replace(/\D/g, ''), 10) || 0 };
+      51 |   }
+      52 |
+        at ModelsPage.getVotesOnMakeList (/workspaces/goquant-qa-automation/pages/ModelsPage.js:49:34)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:83:48
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-webkit/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--ad897--counts-and-shows-thank-you-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_005: list shows updated vote count after previous vote" classname="models.spec.js" time="32.129">
+<failure message="models.spec.js:113:7 TC_MOD_005: list shows updated vote count after previous vote" type="FAILURE">
+<![CDATA[  [webkit] › models.spec.js:113:7 › Model browsing and voting › TC_MOD_005: list shows updated vote count after previous vote 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.innerText: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('row').filter({ has: getByRole('link', { name: 'Miura', exact: true }) }).first().getByRole('cell').nth(2)
+
+
+       at ../pages/ModelsPage.js:49
+
+      47 |     const cells = row.getByRole('cell');
+      48 |     const votesCell = cells.nth(2);
+    > 49 |     const text = await votesCell.innerText();
+         |                                  ^
+      50 |     return { votesCell, votes: parseInt(text.replace(/\D/g, ''), 10) || 0 };
+      51 |   }
+      52 |
+        at ModelsPage.getVotesOnMakeList (/workspaces/goquant-qa-automation/pages/ModelsPage.js:49:34)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:119:36
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-webkit/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--92935-e-count-after-previous-vote-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Model browsing and voting › TC_MOD_006: no HTML/script tags in comments table (BUG)" classname="models.spec.js" time="32.451">
+<failure message="models.spec.js:123:7 TC_MOD_006: no HTML/script tags in comments table (BUG)" type="FAILURE">
+<![CDATA[  [webkit] › models.spec.js:123:7 › Model browsing and voting › TC_MOD_006: no HTML/script tags in comments table (BUG) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('table').last().getByRole('link', { name: 'Miura', exact: true }).first()
+
+
+       at ../pages/ModelsPage.js:25
+
+      23 |       .first();
+      24 |
+    > 25 |     await modelLink.click();
+         |                     ^
+      26 |   }
+      27 |
+      28 |   async addCommentAndVote(comment) {
+        at ModelsPage.openModel (/workspaces/goquant-qa-automation/pages/ModelsPage.js:25:21)
+        at /workspaces/goquant-qa-automation/tests/models.spec.js:128:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--webkit/video.webm]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--webkit/error-context.md]]
+
+[[ATTACHMENT|test-results/models-Model-browsing-and--a7cc4-tags-in-comments-table-BUG--webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="profile.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="webkit" tests="1" failures="0" skipped="0" time="7.389" errors="0">
+<testcase name="Profile › TC_PROFILE_001: view and update user profile" classname="profile.spec.js" time="7.389">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/profile-Profile-TC-PROFILE-001-view-and-update-user-profile-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="webkit" tests="2" failures="0" skipped="0" time="8.338" errors="0">
+<testcase name="Registration › TC_REG_001: valid user registration" classname="registration.spec.js" time="4.354">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration-TC-REG-001-valid-user-registration-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration › TC_REG_002: missing mandatory fields shows validation" classname="registration.spec.js" time="3.984">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/registration-Registration--79b2b-ory-fields-shows-validation-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="webkit" tests="2" failures="0" skipped="0" time="3.393" errors="0">
+<testcase name="Smoke Test - Site loads" classname="smoke.spec.js" time="2.799">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Site-loads-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Smoke Test - Home returns 200 (API)" classname="smoke.spec.js" time="0.594">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/smoke-Smoke-Test---Home-returns-200-API--webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui-compat.spec.js" timestamp="2025-11-28T23:58:32.776Z" hostname="webkit" tests="3" failures="0" skipped="0" time="13.061" errors="0">
+<testcase name="TC_UI_001: global menu links and responsive layouts" classname="ui-compat.spec.js" time="6.654">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-UI-001-global-menu-links-and-responsive-layouts-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="TC_COMP_001: critical flows run in Chrome project" classname="ui-compat.spec.js" time="3.174">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-001-critical-flows-run-in-Chrome-project-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="TC_COMP_002: same flows validated in Edge project" classname="ui-compat.spec.js" time="3.233">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-webkit/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/ui-compat-TC-COMP-002-same-flows-validated-in-Edge-project-webkit/trace.zip]]
 ]]>
 </system-out>
 </testcase>
