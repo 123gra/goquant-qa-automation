@@ -19,6 +19,7 @@ test.describe('Model browsing and voting', () => {
 
   test('TC_MAKE_001: make category navigation', async ({ page }) => {
     const home = new HomePage(page);
+    await home.goHomeViaHeader();
     await home.openPopularMakeLamborghini();
 
     const modelsTable = page
@@ -36,6 +37,7 @@ test.describe('Model browsing and voting', () => {
     const home = new HomePage(page);
     const models = new ModelsPage(page);
 
+    await home.goHomeViaHeader();
     await home.openPopularMakeLamborghini();
     await models.openModel(MODEL);
 
@@ -47,6 +49,7 @@ test.describe('Model browsing and voting', () => {
     const home = new HomePage(page);
     const models = new ModelsPage(page);
 
+    await home.goHomeViaHeader();
     await home.openPopularMakeLamborghini();
     await models.openModel(MODEL);
 
@@ -63,11 +66,12 @@ test.describe('Model browsing and voting', () => {
       models.detailCommentsTable.getByRole('columnheader', { name: 'Comment' })
     ).toBeVisible();
   });
-  
+
   test('TC_MOD_003: comment field visible', async ({ page }) => {
     const home = new HomePage(page);
     const models = new ModelsPage(page);
 
+    await home.goHomeViaHeader();
     await home.openPopularMakeLamborghini();
     await models.openModel(MODEL);
 
@@ -78,6 +82,7 @@ test.describe('Model browsing and voting', () => {
     const home = new HomePage(page);
     const models = new ModelsPage(page);
 
+    await home.goHomeViaHeader();
     await home.openPopularMakeLamborghini();
 
     const { votes: listBefore } = await models.getVotesOnMakeList(MODEL);
@@ -114,6 +119,7 @@ test.describe('Model browsing and voting', () => {
     const home = new HomePage(page);
     const models = new ModelsPage(page);
 
+    await home.goHomeViaHeader();
     await home.openPopularMakeLamborghini();
 
     const { votes } = await models.getVotesOnMakeList(MODEL);
@@ -124,6 +130,7 @@ test.describe('Model browsing and voting', () => {
     const home = new HomePage(page);
     const models = new ModelsPage(page);
 
+    await home.goHomeViaHeader();
     await home.openPopularMakeLamborghini();
     await models.openModel(MODEL);
 

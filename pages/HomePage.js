@@ -7,6 +7,10 @@ export class HomePage {
     await this.page.goto('/');
   }
 
+  async goHomeViaHeader() {
+    await this.page.getByRole('link', { name: 'Buggy Rating' }).click();
+  }
+
   async openRegister() {
     await this.page.getByRole('link', { name: 'Register' }).click();
   }
@@ -20,13 +24,13 @@ export class HomePage {
   }
 
   async openPopularMakeLamborghini() {
-      await this.page.getByRole('link', { name: 'Lamborghini' }).first().click();
+    await this.page.getByRole('link', { name: 'Lamborghini' }).first().click();
   }
 
   async openModelFromMake(modelName) {
-      await this.page
-      .locator('table')                                  
-      .getByRole('link', { name: modelName, exact: true }) 
+    await this.page
+      .locator('table')
+      .getByRole('link', { name: modelName, exact: true })
       .first()
       .click();
   }

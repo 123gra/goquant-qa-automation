@@ -7,7 +7,9 @@ export class RegisterPage {
     this.lastName = page.getByLabel('Last Name');
 
     this.password = page.locator('input#password[name="password"]');
-    this.confirmPassword = page.locator('input#confirmPassword[name="confirmPassword"]');
+    this.confirmPassword = page.locator(
+      'input#confirmPassword[name="confirmPassword"]'
+    );
 
     this.registerButton = page.getByRole('button', { name: 'Register' });
     this.cancelLink = page.getByRole('button', { name: 'Cancel' });
